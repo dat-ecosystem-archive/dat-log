@@ -45,12 +45,17 @@ module.exports = function (opts) {
       state.log = []
       state.puts = 0
       state.dels = 0
-      state.verLen = state.dat.archive.version.toString().length
-      state.zeros = new Array(state.verLen).join('0')
+      bus.on('update', function () {
+        state.verLen = state.dat.archive.version.toString().length
+        state.zeros = new Array(state.verLen).join('0')
+      })
       bus.emit('render')
 
       dat.trackStats()
-      if (dat.writable) return run()
+      if (dat.writable) {
+        bus.emit('update')
+        return run()
+      }
 
       // var waitTimeout TODO
       state.offline = true
@@ -61,7 +66,11 @@ module.exports = function (opts) {
         state.offline = false
         // clearTimeout(waitTimeout) // TODO: close if not live
       })
+      dat.archive.ready(function () {
+        bus.emit('update')
+      })
       dat.archive.on('content', function () {
+        bus.emit('update')
         dat.archive.content.update()
       })
 
