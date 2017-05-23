@@ -1,0 +1,35 @@
+{
+  "name": "dat-log",
+  "description": "view history of dat in the cli",
+  "version": "1.0.0",
+  "author": "Joe Hand <joe@hand.email>",
+  "bugs": {
+    "url": "https://github.com/joehand/dat-log/issues"
+  },
+  "devDependencies": {
+    "standard": "*"
+  },
+  "bin": {
+    "dat-log": "./cli.js"
+  },
+  "homepage": "https://github.com/joehand/dat-log",
+  "keywords": [
+    "dat",
+    "hyperdrive"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joehand/dat-log.git"
+  },
+  "scripts": {
+    "test": "standard"
+  },
+  "dependencies": {
+    "dat-node": "^3.3.1",
+    "minimist": "^1.2.0",
+    "neat-log": "^1.1.0",
+    "prettier-bytes": "^1.0.4",
+    "random-access-memory": "^2.4.0"
+  }
+}
