@@ -32,6 +32,8 @@ Blocks:
 
 ## Install
 
+If you already have `dat` installed, run it with `dat log`!
+
 ```
 npm install -g dat-log
 ```

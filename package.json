@@ -9,6 +9,7 @@
   "devDependencies": {
     "standard": "*"
   },
+  "main": "./index.js",
   "bin": {
     "dat-log": "./cli.js"
   },
