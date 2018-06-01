@@ -112,7 +112,7 @@ module.exports = function (opts) {
       if (state.opts.key) return 'Connecting to network...'
       return 'Reading dat history...'
     }
-    return output`
+    return output(`
       ${state.log.join('\n')}
       ${state.offline
     ? state.exiting
@@ -128,6 +128,6 @@ module.exports = function (opts) {
       Blocks:
       - Metadata ${state.dat.archive.metadata.length}
       - Content ${state.dat.archive.content.length}
-    `
+    `)
   }
 }
