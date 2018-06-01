@@ -31,6 +31,6 @@
     "minimist": "^1.2.0",
     "neat-log": "^1.1.0",
     "prettier-bytes": "^1.0.4",
-    "random-access-memory": "^2.4.0"
+    "random-access-memory": "^3.0.0"
   }
 }
