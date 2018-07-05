@@ -112,13 +112,13 @@ module.exports = function (opts) {
       if (state.opts.key) return 'Connecting to network...'
       return 'Reading dat history...'
     }
-    return output`
+    return output(`
       ${state.log.join('\n')}
       ${state.offline
-          ? state.exiting
-            ? '\nNo sources found in network.\nLog may be outdated.'
-            : '...\n\nConnecting to network to update & verify log...'
-          : '\nLog synced with network'}
+    ? state.exiting
+      ? '\nNo sources found in network.\nLog may be outdated.'
+      : '...\n\nConnecting to network to update & verify log...'
+    : '\nLog synced with network'}
 
       Archive has ${state.dat.archive.version} changes (puts: +${state.puts}, dels: -${state.dels})
       Current Size: ${prettyBytes(state.dat.stats.get().byteLength)}
@@ -128,6 +128,6 @@ module.exports = function (opts) {
       Blocks:
       - Metadata ${state.dat.archive.metadata.length}
       - Content ${state.dat.archive.content.length}
-    `
+    `)
   }
 }
